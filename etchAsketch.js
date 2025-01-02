@@ -5,37 +5,45 @@ function makeGrid (number = 16) {
     for (let i = 0; i < number; i++) {
         const rowDiv = document.createElement('div');
         divContainer.appendChild(rowDiv);
-        rowDiv.classList.add('rowDiv', 'grid');
+        rowDiv.classList.add('rowDiv');
         
         function makeColumnDivs (number) {
             for (let i = 0; i < number;  i++) {
                 const newDiv = document.createElement('div');
                 rowDiv.appendChild(newDiv);
-                newDiv.classList.add('gridBlock', 'columnDiv', 'grid');
+                newDiv.classList.add('gridBlock', 'columnDiv');
+                let dynPad = 36/number;
+                newDiv.style.padding = `${dynPad}vmin`
             }
         }
 
         makeColumnDivs(number);
     }
 }
-//default grid creation
 makeGrid();
 
+function blockFill () {
+    const gridBlock = document.querySelectorAll('.gridBlock');
+    for (let i = 0; i < gridBlock.length; i++) {
+        gridBlock[i].addEventListener("mouseover", () => {
+        gridBlock[i].style.backgroundColor = '#696969'
+    })}
+}
+blockFill();
 
 const docBody = divContainer.parentNode;
 
-//previous grid removal
 function removeGrid() {
     docBody.removeChild(divContainer);
 }
-//restoration of container div
+
 function restoreGrid() {
     const renewedDiv = document.createElement('div');
     docBody.appendChild(renewedDiv);
     renewedDiv.id = 'gridContainer';
     divContainer = renewedDiv;
 }
-//wrapper function for grid reset
+
 function gridReset() {
     removeGrid();
     restoreGrid();
@@ -54,6 +62,8 @@ function changeSize () {
     };
     gridReset();
     makeGrid(gridSize);
+    blockFill();
 }
 
 gridButton.addEventListener('click', () => changeSize());
+

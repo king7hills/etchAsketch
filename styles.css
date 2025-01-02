@@ -7,15 +7,16 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 95vw;
+    height: 90vh;
+    flex-basis: content;
 }
 
 .gridBlock {
     box-sizing: border-box;
-    background-color: pink;
-    border: 2px solid green;
-    min-height: 1px;
-    min-width: 1px;
-    padding: 50px;
+    background-color: white;
+    border: 0.25px solid black;
+    
 }
 
 .rowDiv {
