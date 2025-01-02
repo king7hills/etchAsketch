@@ -2,7 +2,7 @@ const divContainer = document.querySelector('#gridContainer');
 
 
 
-function makeDivs (number) {
+function makeColumnDivs (number) {
     for (let i = 0; i < number;  i++) {
         const newDiv = document.createElement('div');
         divContainer.appendChild(newDiv);
@@ -10,6 +10,6 @@ function makeDivs (number) {
     }
 }
 
-makeDivs(4);
+makeColumnDivs(3);
 
 const gridBlockClass = document.querySelector('.gridBlock');

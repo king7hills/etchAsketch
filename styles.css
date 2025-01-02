@@ -1,9 +1,20 @@
+h1 {
+    font-weight: bolder;
+    font-style: italic;
+}
+
 #gridContainer {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-.gridblock {
+.gridBlock {
+    box-sizing: border-box;
     background-color: pink;
+    border: 5px, solid, blue;
+    min-height: 1px;
+    min-width: 1px;
+    padding: 50px;
 }
