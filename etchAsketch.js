@@ -1,15 +1,28 @@
 const divContainer = document.querySelector('#gridContainer');
 
+//makeColumnDivs(3);
 
 
-function makeColumnDivs (number) {
-    for (let i = 0; i < number;  i++) {
-        const newDiv = document.createElement('div');
-        divContainer.appendChild(newDiv);
-        newDiv.className = 'gridBlock';
+
+
+function makeRowDivs (number) {
+    for (let i = 0; i < number; i++) {
+        const rowDiv = document.createElement('div');
+        divContainer.appendChild(rowDiv);
+        rowDiv.classList.add('rowDiv');
+        
+        function makeColumnDivs (number) {
+            for (let i = 0; i < number;  i++) {
+                const newDiv = document.createElement('div');
+                rowDiv.appendChild(newDiv);
+                newDiv.classList.add('gridBlock', 'columnDiv');
+            }
+        }
+
+        makeColumnDivs(number);
     }
 }
 
-makeColumnDivs(3);
 
-const gridBlockClass = document.querySelector('.gridBlock');
+
+makeRowDivs(16);

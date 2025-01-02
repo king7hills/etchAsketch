@@ -7,7 +7,6 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
 .gridBlock {
@@ -17,4 +16,11 @@ h1 {
     min-height: 1px;
     min-width: 1px;
     padding: 50px;
+}
+
+.rowDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
