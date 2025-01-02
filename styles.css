@@ -13,7 +13,7 @@ h1 {
 .gridBlock {
     box-sizing: border-box;
     background-color: pink;
-    border: 5px, solid, blue;
+    border: 2px solid green;
     min-height: 1px;
     min-width: 1px;
     padding: 50px;
