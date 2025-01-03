@@ -22,6 +22,7 @@ function makeGrid (number = 16) {
 }
 makeGrid();
 
+//standard block fill function
 function blockFill () {
     const gridBlock = document.querySelectorAll('.gridBlock');
     for (let i = 0; i < gridBlock.length; i++) {
@@ -31,6 +32,7 @@ function blockFill () {
 }
 blockFill();
 
+//Rainbow fill option
 function rainbowFill () {
     const gridBlock = document.querySelectorAll('.gridBlock');
     for (let i = 0; i < gridBlock.length; i++) {
@@ -38,12 +40,22 @@ function rainbowFill () {
         let g = Math.floor(Math.random()*256);
         let b = Math.floor(Math.random()*256);
         gridBlock[i].addEventListener("mouseover", () => {
-        gridBlock[i].style.backgroundColor = 'r, g, b'
+        gridBlock[i].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     })}
 }
 
+const rainbowSwitch = document.querySelector('#rainbow');
+rainbowSwitch.addEventListener("change", () => {
+    if (rainbowSwitch.checked) {
+        rainbowFill();
+    } else {blockFill();}
+});
+
+//
+style.opacity = '0.1'
 
 
+//Grid settings
 const docBody = divContainer.parentNode;
 
 function removeGrid() {
@@ -79,4 +91,3 @@ function changeSize () {
 }
 
 gridButton.addEventListener('click', () => changeSize());
-
