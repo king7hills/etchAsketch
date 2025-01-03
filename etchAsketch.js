@@ -31,6 +31,19 @@ function blockFill () {
 }
 blockFill();
 
+function rainbowFill () {
+    const gridBlock = document.querySelectorAll('.gridBlock');
+    for (let i = 0; i < gridBlock.length; i++) {
+        let r = Math.floor(Math.random()*256);
+        let g = Math.floor(Math.random()*256);
+        let b = Math.floor(Math.random()*256);
+        gridBlock[i].addEventListener("mouseover", () => {
+        gridBlock[i].style.backgroundColor = 'r, g, b'
+    })}
+}
+
+
+
 const docBody = divContainer.parentNode;
 
 function removeGrid() {
