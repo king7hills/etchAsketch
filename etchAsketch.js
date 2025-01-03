@@ -22,17 +22,52 @@ function makeGrid (number = 16) {
 }
 makeGrid();
 
-//standard block fill function
+//Shading toggle and operators
+let hoverCount = 0;
+let opacityLevel = 1;
+let shadeState = false;
+const shadeSwitch = document.querySelector('#shade');
+shadeSwitch.addEventListener("change", () => {
+    if (shadeSwitch.checked) {
+        shadeState = true;
+        blockFill();
+    } else {return shadeState = false;}
+});
+
+//NEEDS WORK
+function shadeFunction () {
+    if (shadeState == true) {
+        hoverCount++;
+        opacityLevel = hoverCount*0.05;
+        gridBlock[i].style.opacity = `${opacityLevel}`;
+        
+    } else {gridBlock[i].style.opacity = 1;
+        gridBlock[i].style.backgroundColor = 'black';
+    };
+}
+
+//Standard block fill
 function blockFill () {
     const gridBlock = document.querySelectorAll('.gridBlock');
+    hoverCount = 0;
     for (let i = 0; i < gridBlock.length; i++) {
         gridBlock[i].addEventListener("mouseover", () => {
-        gridBlock[i].style.backgroundColor = '#696969'
-    })}
+        gridBlock[i].style.backgroundColor = 'black';
+        })
+    } 
 }
+
+//Initial blockFill call
 blockFill();
 
-//Rainbow fill option
+//Rainbow fill feature
+const rainbowSwitch = document.querySelector('#rainbow');
+rainbowSwitch.addEventListener("change", () => {
+    if (rainbowSwitch.checked) {
+        rainbowFill();
+    } else {blockFill();}
+});
+
 function rainbowFill () {
     const gridBlock = document.querySelectorAll('.gridBlock');
     for (let i = 0; i < gridBlock.length; i++) {
@@ -41,21 +76,12 @@ function rainbowFill () {
         let b = Math.floor(Math.random()*256);
         gridBlock[i].addEventListener("mouseover", () => {
         gridBlock[i].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-    })}
+        })
+    }
 }
 
-const rainbowSwitch = document.querySelector('#rainbow');
-rainbowSwitch.addEventListener("change", () => {
-    if (rainbowSwitch.checked) {
-        rainbowFill();
-    } else {blockFill();}
-});
 
-//
-style.opacity = '0.1'
-
-
-//Grid settings
+//Grid settings per user
 const docBody = divContainer.parentNode;
 
 function removeGrid() {
