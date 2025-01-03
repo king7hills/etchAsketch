@@ -32,7 +32,12 @@ The block changes background color to a dark gray when the mouse hovers over it.
 15:17EST Joseph Haas
 Basic project constraints completed
 
-Next, I will work on the extra credit assignments. The first is applying random colors to the fill function. The second is applying an ever darkening effect with opacity. I am taking it upon myself to add toggle buttons for using these effects. Rainbow Fill for random colors. Shade Fill for opacity.
+Next, I will work on the extra credit assignments. The first is applying random colors to the fill function. The second is applying an ever darkening effect 
+with opacity. I am taking it upon myself to add toggle buttons for using these effects. Rainbow Fill for random colors. Shade Fill for opacity.
 
 23:03EST Joseph Haas
 Rainbow fill feature works. Still sorting out the shading function. Toggle works, but haven't figured out the underlying shading.
+
+1.3.25
+For the sake of moving on, I've decided to comment out the shading code I've written. I may come back to it at some point, but I'd like to continue
+learning rather than spend an inordinate amount of time on the shading feature.

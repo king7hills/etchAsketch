@@ -22,7 +22,7 @@ function makeGrid (number = 16) {
 }
 makeGrid();
 
-//Shading toggle and operators
+/*Shading toggle and operators
 let hoverCount = 0;
 let opacityLevel = 1;
 let shadeState = false;
@@ -44,7 +44,7 @@ function shadeFunction () {
     } else {gridBlock[i].style.opacity = 1;
         gridBlock[i].style.backgroundColor = 'black';
     };
-}
+}*/
 
 //Standard block fill
 function blockFill () {
