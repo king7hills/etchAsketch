@@ -29,7 +29,10 @@ I've spent enough time trying to perfect the grid generation, so I will move on 
 Created a block fill function which attached an event listener to each DOM node gathered in the node list of gridBlocks.
 The block changes background color to a dark gray when the mouse hovers over it.
 
-Basic project constraints completed 15:17EST Joseph Haas
+15:17EST Joseph Haas
+Basic project constraints completed
 
 Next, I will work on the extra credit assignments. The first is applying random colors to the fill function. The second is applying an ever darkening effect with opacity. I am taking it upon myself to add toggle buttons for using these effects. Rainbow Fill for random colors. Shade Fill for opacity.
 
+23:03EST Joseph Haas
+Rainbow fill feature works. Still sorting out the shading function. Toggle works, but haven't figured out the underlying shading.
